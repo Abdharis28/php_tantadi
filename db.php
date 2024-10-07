@@ -1,6 +1,6 @@
 <?php
-$host = "localhost";
-$user = "root";
+$servername = "localhost";
+$username = "root";
 $password = "";
 $dbname = "pdf_database";
 
