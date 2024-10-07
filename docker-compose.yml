@@ -1,25 +1,19 @@
-version: '3.1'
+version: '3.8'
 
 services:
-  app:
-    image: php:7.4-apache
-    container_name: php-app
-    volumes:
-      - ./src:/var/www/html
-    networks:
-      - app-network
-
   db:
     image: mysql:latest
-    container_name: mysql-db
     environment:
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: pdf_database
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root_password
-    networks:
-      - app-network
+    ports:
+      - "3306:3306"
 
-networks:
-  app-network:
-    driver: bridge
+  php:
+    image: php:apache
+    volumes:
+      - ./path/to/your/php/files:/var/www/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
