@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: pdf_database
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root_password
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
