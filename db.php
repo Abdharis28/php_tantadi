@@ -5,7 +5,7 @@ $password = "";
 $dbname = "pdf_database";
 
 // Membuat koneksi
-$conn = new mysqli($host, $user, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Cek koneksi
 if ($conn->connect_error) {
