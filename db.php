@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pdf_database";
+$servername = "db";  // Nama layanan MySQL dalam Docker Compose
+$username = "root";  // Sesuaikan dengan username MySQL
+$password = "root_password";  // Sesuaikan dengan password MySQL
+$dbname = "pdf_database";  // Nama database MySQL
 
 // Membuat koneksi
 $conn = new mysqli($servername, $username, $password, $dbname);
